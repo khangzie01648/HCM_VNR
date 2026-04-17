@@ -109,4 +109,6 @@ temp/
 .webdev/
 
 # Manus version file (auto-generated, not part of source)
-client/public/__manus__/version.json
+# Large media files
+14.mp4
+13.mp4
