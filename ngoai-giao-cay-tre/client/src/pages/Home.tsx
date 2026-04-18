@@ -19,6 +19,9 @@ import BacNPT from "@root/BacNPT.jpg";
 // import video13 from "@root/13.mp4";
 // @ts-ignore
 import FinalPoster from "@root/assets/poster_dai_hoi_xiii_final_1.png";
+// @ts-ignore
+import bgImage from "@root/assets/1-51d37.jpg";
+
 
 interface SectionProps {
    children: React.ReactNode;
@@ -177,17 +180,17 @@ export default function Home() {
          front: (
             <div className="space-y-3 font-mono text-[9px] opacity-40 leading-tight h-full overflow-y-auto no-scrollbar forced-black-ink">
                <p className="whitespace-pre-wrap leading-[1.8]">(1) Hồ Chí Minh: Toàn tập, t.2, Nxb Chính trị quốc gia Sự thật, Hà Nội, 2011, tr.320.
-(2), (3), (12), (13) Hồ Chí Minh: Toàn tập, Sđd, t.5, tr.162, 602, 256, 39.
-(4) Hồ Chí Minh: Toàn tập, Sđd, t.12, tr.732.
-(5) Hồ Chí Minh: Toàn tập, Sđd, t.7, tr.445.
-(6), (8) Hồ Chí Minh: Toàn tập, Sđd, t.4, tr.147, 76-77.
-(7) Hồ Chí Minh: Toàn tập, Sđd, t.15, tr.675.
-(8) Hồ Chí Minh: Toàn tập, Sđd, t.13, tr.453.
-(10), (11) Hồ Chí Minh: Toàn tập, Sđd, t.14, tr.148, 304.
-(14) Hồ Chí Minh: Toàn tập, Sđd, t.6, tr.145.
-(15) Hồ Chí Minh: Biên niên tiểu sử, Nxb Chính trị quốc gia Sự thật, Hà Nội, 1993, tr.216.
-(16) Hồ Chí Minh: Toàn tập, Sđd, t.8, tr.555.
-(17), (18), (19), (20), (21), (22), (23) ĐCSVN: Văn kiện Đại hội đại biểu toàn quốc lần thứ XIII, t.I, Nxb Chính trị quốc gia Sự thật, Hà Nội, 2021, tr.161, 25, 162, 164, 162, 110, 162-163. HẾT.</p>
+                  (2), (3), (12), (13) Hồ Chí Minh: Toàn tập, Sđd, t.5, tr.162, 602, 256, 39.
+                  (4) Hồ Chí Minh: Toàn tập, Sđd, t.12, tr.732.
+                  (5) Hồ Chí Minh: Toàn tập, Sđd, t.7, tr.445.
+                  (6), (8) Hồ Chí Minh: Toàn tập, Sđd, t.4, tr.147, 76-77.
+                  (7) Hồ Chí Minh: Toàn tập, Sđd, t.15, tr.675.
+                  (8) Hồ Chí Minh: Toàn tập, Sđd, t.13, tr.453.
+                  (10), (11) Hồ Chí Minh: Toàn tập, Sđd, t.14, tr.148, 304.
+                  (14) Hồ Chí Minh: Toàn tập, Sđd, t.6, tr.145.
+                  (15) Hồ Chí Minh: Biên niên tiểu sử, Nxb Chính trị quốc gia Sự thật, Hà Nội, 1993, tr.216.
+                  (16) Hồ Chí Minh: Toàn tập, Sđd, t.8, tr.555.
+                  (17), (18), (19), (20), (21), (22), (23) ĐCSVN: Văn kiện Đại hội đại biểu toàn quốc lần thứ XIII, t.I, Nxb Chính trị quốc gia Sự thật, Hà Nội, 2021, tr.161, 25, 162, 164, 162, 110, 162-163. HẾT.</p>
             </div>
          ),
          back: (
@@ -200,7 +203,7 @@ export default function Home() {
 
    return (
       <main className="bg-[#080404] text-white w-full h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth relative no-scrollbar">
-         
+
          <style>{`
             .forced-black-ink * { color: #1c0a0a !important; }
             .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -217,16 +220,14 @@ export default function Home() {
 
          {/* Z-INDEX 0: BACKGROUND CỐ ĐỊNH */}
          <div className="fixed inset-0 z-0 pointer-events-none">
-            <video autoPlay loop muted={isMuted} playsInline className="w-full h-full object-cover brightness-[0.5] contrast-[1.2]">
-               <source src={covn} type="video/mp4" />
-            </video>
+            <img src={bgImage} className="w-full h-full object-cover brightness-[0.5] contrast-[1.2]" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-[#080404]/80 to-[#080404]" />
          </div>
 
          {/* NAVBAR */}
          <nav className="fixed top-0 left-0 w-full z-50 px-12 py-10 flex justify-end items-center bg-gradient-to-b from-black/80 to-transparent">
             <div className="hidden lg:flex items-center gap-12 text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">
-               {['Khởi đầu', 'Giá trị', 'Nghiên cứu', 'Di sản'].map(item => ( activeSection === item ? <span key={item} className="text-[#D4AF37] font-black">{item}</span> : <a key={item} href={`#${item}`} className="hover:text-[#D4AF37] transition-all">{item}</a>))}
+               {['Khởi đầu', 'Giá trị', 'Nghiên cứu', 'Di sản'].map(item => (activeSection === item ? <span key={item} className="text-[#D4AF37] font-black">{item}</span> : <a key={item} href={`#${item}`} className="hover:text-[#D4AF37] transition-all">{item}</a>))}
                <div className="flex gap-6 items-center border-l border-white/10 pl-12">
                   <Search size={18} className="text-white/40 hover:text-white cursor-pointer" />
                   <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center cursor-pointer hover:bg-white/5">
@@ -253,7 +254,7 @@ export default function Home() {
 
          {/* SECTION 2: GIÁ TRỊ TƯ TƯỞNG */}
          <Section id="Giá trị">
-<div className="absolute inset-0 z-0 bg-gradient-to-r from-[#080404]/95 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#080404]/95 via-transparent to-transparent pointer-events-none" />
             <div className="max-w-7xl mx-auto px-12 lg:px-24 grid grid-cols-12 gap-16 lg:gap-24 items-center w-full relative z-10 text-left">
                <div className="col-span-12 lg:col-span-5 space-y-12">
                   <motion.div initial={{ opacity: 0, x: -60 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
@@ -304,7 +305,7 @@ export default function Home() {
             <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
                <motion.img initial={{ opacity: 0, scale: 1.05 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 2.5 }} src={BacNPT} alt="Bac Trong Background" className="w-full h-full object-cover object-center filter brightness-[1.1] contrast-[1.15]" />
                <div className="absolute inset-0 z-10 opacity-[0.4] mix-blend-screen pointer-events-none">
-                  <video autoPlay loop muted playsInline className="w-full h-full object-cover filter blur-[1px] scale-110"><source src={covn} type="video/mp4" /></video>
+                  <img src={bgImage} className="w-full h-full object-cover filter blur-[1px] scale-110" />
                </div>
                <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[#080404] via-[#080404]/40 to-transparent z-30" />
             </div>
@@ -333,48 +334,48 @@ export default function Home() {
          {/* SECTION 4: DI SẢN - UNIFIED 3D BOOK */}
          <Section id="Di sản" className="overflow-hidden" style={{ background: 'radial-gradient(circle, #2a0808 0%, #020202 100%)' }}>
             <div className="relative w-full h-full flex items-center justify-center p-20 text-black">
-                <motion.div 
-                   key="unified-book"
-                   initial={{ opacity: 0, scale: 0.9, y: 100 }} 
-                   animate={{ 
-                      opacity: 1, 
-                      scale: 1, 
-                      y: 0,
-                      x: currentPage === 0 ? "-25%" : "0%"
-                   }} 
-                   transition={{ duration: 1.2, ease: [0.43, 0.13, 0.23, 0.96] }}
-                   className="relative w-full max-w-[1700px] aspect-[16/9.5]" 
-                   style={{ transformStyle: 'preserve-3d' }}
-                >
-                   <div className="w-full h-full relative book-3d">
-                      <div className={`absolute left-0 top-1 bottom-1 bg-white/90 rounded-l-2xl border-l-[8px] border-black/5 stack-edge-right transition-all duration-700 ${currentPage === 0 ? 'opacity-0' : 'opacity-100'}`} style={{ width: `${(currentPage / (totalSheets + 1)) * 40}px`, left: `-${(currentPage / (totalSheets + 1)) * 40}px` }} />
-                      <div className="absolute right-0 top-1 bottom-1 bg-white/90 rounded-r-2xl border-r-[8px] border-black/5 stack-edge-right transition-all duration-700" style={{ width: `${((totalSheets + 1 - currentPage) / (totalSheets + 1)) * 40}px`, right: `-${((totalSheets + 1 - currentPage) / (totalSheets + 1)) * 40}px` }} />
-                      <div className="absolute inset-0 grid grid-cols-2 shadow-2xl">
-                         <div className={`page-soft-gradient rounded-l-[15px] border-r border-black/5 shadow-inner transition-opacity duration-700 ${currentPage === 0 ? 'opacity-0' : 'opacity-100'}`} />
-                         <div className="page-soft-gradient rounded-r-[15px] border-l border-black/5 shadow-inner" />
-                      </div>
-                      
-                      <div className={`absolute left-0 inset-y-0 w-1/2 bg-[#3a0a0a] rounded-l-[15px] -z-10 shadow-2xl transition-opacity duration-700 ${currentPage === 0 ? 'opacity-0' : 'opacity-100'}`} />
-                      
-                      <div className="absolute inset-y-0 left-0 w-1/2 z-[200] cursor-pointer" onClick={() => setCurrentPage(p => Math.max(0, p - 1))} />
-                      <div className="absolute inset-y-0 right-0 w-1/2 z-[200] cursor-pointer" onClick={() => setCurrentPage(p => Math.min(totalSheets, p + 1))} />
-                      
-                      {/* SHEET 0: INTEGRATED COVER */}
-                      <div className="sheet" style={{ zIndex: currentPage === 0 ? 100 : 5, transform: `rotateY(${currentPage > 0 ? -180 : 0}deg)` }}>
-                         <div className="page page-front rounded-r-[15px] overflow-hidden shadow-2xl p-0">
-                            <div className="w-full h-full bg-[#1e0808] border-l-[20px] border-[#3a0a0a] relative overflow-hidden">
-                               <img src={FinalPoster} className="w-full h-full object-cover" />
-                               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
-                               <div className="absolute inset-0 flex flex-col items-center justify-start pt-72 p-12 text-center text-white">
-                                  <h4 style={{ fontFamily: "'Cinzel', serif" }} className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight mb-6 text-[#FFD700] drop-shadow-[0_0_25px_rgba(212,175,55,1)]">
-                                     Tư tưởng Hồ Chí Minh về đối ngoại <br/>
-                                     <span className="text-[#FFD700] text-xl lg:text-2xl opacity-100">và sự vận dụng trong Văn kiện Đại hội XIII của Đảng</span>
-                                  </h4>
-                                  <div className="w-24 h-[1px] bg-[#D4AF37]/50 mt-4" />
-                               </div>
-                            </div>
-                         </div>
-                         <div className="page page-back page-soft-gradient rounded-l-[15px] p-8 lg:p-12 overflow-hidden forced-black-ink focus-within:z-50">
+               <motion.div
+                  key="unified-book"
+                  initial={{ opacity: 0, scale: 0.9, y: 100 }}
+                  animate={{
+                     opacity: 1,
+                     scale: 1,
+                     y: 0,
+                     x: currentPage === 0 ? "-25%" : "0%"
+                  }}
+                  transition={{ duration: 1.2, ease: [0.43, 0.13, 0.23, 0.96] }}
+                  className="relative w-full max-w-[1700px] aspect-[16/9.5]"
+                  style={{ transformStyle: 'preserve-3d' }}
+               >
+                  <div className="w-full h-full relative book-3d">
+                     <div className={`absolute left-0 top-1 bottom-1 bg-white/90 rounded-l-2xl border-l-[8px] border-black/5 stack-edge-right transition-all duration-700 ${currentPage === 0 ? 'opacity-0' : 'opacity-100'}`} style={{ width: `${(currentPage / (totalSheets + 1)) * 40}px`, left: `-${(currentPage / (totalSheets + 1)) * 40}px` }} />
+                     <div className="absolute right-0 top-1 bottom-1 bg-white/90 rounded-r-2xl border-r-[8px] border-black/5 stack-edge-right transition-all duration-700" style={{ width: `${((totalSheets + 1 - currentPage) / (totalSheets + 1)) * 40}px`, right: `-${((totalSheets + 1 - currentPage) / (totalSheets + 1)) * 40}px` }} />
+                     <div className="absolute inset-0 grid grid-cols-2 shadow-2xl">
+                        <div className={`page-soft-gradient rounded-l-[15px] border-r border-black/5 shadow-inner transition-opacity duration-700 ${currentPage === 0 ? 'opacity-0' : 'opacity-100'}`} />
+                        <div className="page-soft-gradient rounded-r-[15px] border-l border-black/5 shadow-inner" />
+                     </div>
+
+                     <div className={`absolute left-0 inset-y-0 w-1/2 bg-[#3a0a0a] rounded-l-[15px] -z-10 shadow-2xl transition-opacity duration-700 ${currentPage === 0 ? 'opacity-0' : 'opacity-100'}`} />
+
+                     <div className="absolute inset-y-0 left-0 w-1/2 z-[200] cursor-pointer" onClick={() => setCurrentPage(p => Math.max(0, p - 1))} />
+                     <div className="absolute inset-y-0 right-0 w-1/2 z-[200] cursor-pointer" onClick={() => setCurrentPage(p => Math.min(totalSheets, p + 1))} />
+
+                     {/* SHEET 0: INTEGRATED COVER */}
+                     <div className="sheet" style={{ zIndex: currentPage === 0 ? 100 : 5, transform: `rotateY(${currentPage > 0 ? -180 : 0}deg)` }}>
+                        <div className="page page-front rounded-r-[15px] overflow-hidden shadow-2xl p-0">
+                           <div className="w-full h-full bg-[#1e0808] border-l-[20px] border-[#3a0a0a] relative overflow-hidden">
+                              <img src={FinalPoster} className="w-full h-full object-cover" />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
+                              <div className="absolute inset-0 flex flex-col items-center justify-start pt-72 p-12 text-center text-white">
+                                 <h4 style={{ fontFamily: "'Cinzel', serif" }} className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight mb-6 text-[#FFD700] drop-shadow-[0_0_25px_rgba(212,175,55,1)]">
+                                    Tư tưởng Hồ Chí Minh về đối ngoại <br />
+                                    <span className="text-[#FFD700] text-xl lg:text-2xl opacity-100">và sự vận dụng trong Văn kiện Đại hội XIII của Đảng</span>
+                                 </h4>
+                                 <div className="w-24 h-[1px] bg-[#D4AF37]/50 mt-4" />
+                              </div>
+                           </div>
+                        </div>
+                        <div className="page page-back page-soft-gradient rounded-l-[15px] p-8 lg:p-12 overflow-hidden forced-black-ink focus-within:z-50">
                            <div className="absolute inset-0 gutter-shadow opacity-50 z-20 pointer-events-none" />
                            <div className="relative z-30 space-y-4 font-['Times_New_Roman'] text-[#1c0a0a] text-[17px] lg:text-[18px] leading-relaxed text-left">
                               <p className="indent-10 border-t border-black/10 pt-4 italic text-justify">
@@ -383,31 +384,31 @@ export default function Home() {
                               <h3 className="text-xl font-bold text-[#b08d26] border-b border-red-900/10 pb-1 uppercase">1. Tư tưởng Hồ Chí Minh về đối ngoại</h3>
                               <p className="indent-10 text-justify">Hồ Chí Minh là nhà ngoại giao kiệt xuất, người sáng lập nền ngoại giao hiện đại Việt Nam. Người luôn quan tâm chỉ đạo công tác đối ngoại nhằm xây dựng khối đoàn kết quốc tế, tranh thủ sự ủng hộ của các nước và nhân dân yêu chuộng hòa bình trên thế giới với sự nghiệp cách mạng của Đảng và nhân dân Việt Nam. Tại Đại hội XIII của Đảng, đường lối đối ngoại của Đảng đã kế thừa quan điểm các Đại hội trước và có những điều chỉnh, bổ sung phù hợp; đặc biệt là sự vận dụng đúng đắn, sáng tạo tư tưởng Hồ Chí Minh về đối ngoại trong điều kiện mới. Thực tiễn hoạt động cách mạng cùng nền tảng tri thức và vốn văn hóa đã kết tinh ở Hồ Chí Minh hệ thống tư tưởng toàn diện, sâu sắc. Trong đó, tư tưởng của Người về đối ngoại chứa đựng nhiều nội dung không chỉ bền vững qua thời gian, mà còn có những tư duy đi trước thời đại; thể hiện ở những điểm sau:</p>
                            </div>
-                         </div>
-                      </div>
+                        </div>
+                     </div>
 
-                      {sheets.map((sheet, index) => (
-                         <div key={index} className="sheet" style={{ zIndex: currentPage > index + 1 ? index + 10 : totalSheets - index + 10, transform: `rotateY(${currentPage > index + 1 ? -180 : 0}deg)` }}>
-                            <div className="page page-front page-soft-gradient rounded-r-[15px] p-8 lg:p-12 overflow-y-auto no-scrollbar forced-black-ink"><div className="absolute inset-0 gutter-shadow opacity-50 z-20 pointer-events-none" />{sheet.front}</div>
-                            <div className="page page-back page-soft-gradient rounded-l-[15px] p-8 lg:p-12 overflow-y-auto no-scrollbar forced-black-ink"><div className="absolute inset-0 gutter-shadow opacity-50 z-20 pointer-events-none" /><div style={{ transform: 'rotateY(0deg)' }}>{sheet.back}</div></div>
-                         </div>
-                      ))}
-                      
-                      <div className="absolute left-1/2 top-0 bottom-0 w-[4px] -translate-x-1/2 bg-black/20 z-[250] blur-[1.5px]" />
-                   </div>
-                </motion.div>
+                     {sheets.map((sheet, index) => (
+                        <div key={index} className="sheet" style={{ zIndex: currentPage > index + 1 ? index + 10 : totalSheets - index + 10, transform: `rotateY(${currentPage > index + 1 ? -180 : 0}deg)` }}>
+                           <div className="page page-front page-soft-gradient rounded-r-[15px] p-8 lg:p-12 overflow-y-auto no-scrollbar forced-black-ink"><div className="absolute inset-0 gutter-shadow opacity-50 z-20 pointer-events-none" />{sheet.front}</div>
+                           <div className="page page-back page-soft-gradient rounded-l-[15px] p-8 lg:p-12 overflow-y-auto no-scrollbar forced-black-ink"><div className="absolute inset-0 gutter-shadow opacity-50 z-20 pointer-events-none" /><div style={{ transform: 'rotateY(0deg)' }}>{sheet.back}</div></div>
+                        </div>
+                     ))}
+
+                     <div className="absolute left-1/2 top-0 bottom-0 w-[4px] -translate-x-1/2 bg-black/20 z-[250] blur-[1.5px]" />
+                  </div>
+               </motion.div>
             </div>
          </Section>
 
          {showVideo && (
             <div className="fixed inset-0 z-[150] bg-black/98 flex items-center justify-center p-24 backdrop-blur-3xl" onClick={() => setShowVideo(false)}>
                <div className="w-full max-w-6xl aspect-video rounded-sm overflow-hidden bg-black shadow-2xl border border-white/10">
-                  <iframe 
+                  <iframe
                      className="w-full h-full"
-                     src="https://www.youtube.com/embed/1dbI31vF9Xs?autoplay=1&mute=0&controls=1&rel=0" 
-                     title="YouTube video player" 
-                     frameBorder="0" 
-                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                     src="https://www.youtube.com/embed/1dbI31vF9Xs?autoplay=1&mute=0&controls=1&rel=0"
+                     title="YouTube video player"
+                     frameBorder="0"
+                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                      allowFullScreen
                   />
                </div>
