@@ -56,6 +56,7 @@ import thanhlapDang from "@root/THÀNH LẬP ĐẢNG.jpg";
 import codang from "@root/codang.mp4";
 // @ts-ignore
 import td7Bg from "@root/assets/TD7.jpg";
+
 interface SectionProps {
    children: React.ReactNode;
    className?: string;
@@ -246,7 +247,7 @@ export default function Home() {
 
                               {/* Direct Access Play Portal */}
                               <div
-                                 onClick={() => setShowVideo("9d9W8X6ZpUw")}
+                                 onClick={() => setShowVideo("X_ch15IK6pM")}
                                  className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer group/play"
                               >
                                  <div className="w-24 h-24 rounded-full border border-white/10 flex items-center justify-center backdrop-blur-md group-hover/play:scale-110 group-hover/play:border-red-500/50 transition-all duration-500 overflow-hidden">
