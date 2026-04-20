@@ -93,8 +93,8 @@ const MuseumWall: React.FC<MuseumWallProps> = ({ onSelectImg }) => {
          direction: 'left',
          speed: '70s',
          posters: [ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12],
-         width: '240px',
-         height: '340px'
+         width: '280px',
+         height: '400px'
       },
       {
          id: 2,
@@ -109,8 +109,8 @@ const MuseumWall: React.FC<MuseumWallProps> = ({ onSelectImg }) => {
          direction: 'left',
          speed: '110s',
          posters: [ex23, ex24, ex25, ex26, ex27, ex28, ex29, ex30, ex31, ex32],
-         width: '220px',
-         height: '310px'
+         width: '280px',
+         height: '400px'
       }
    ];
 
@@ -261,15 +261,14 @@ const MuseumWall: React.FC<MuseumWallProps> = ({ onSelectImg }) => {
                   body { overflow: hidden !important; }
                   header, nav, .navbar, [role="navigation"] { display: none !important; }
                `}</style>
-                  {/* Exhibition Background Video */}
-                  <div className="absolute inset-0 z-0 pointer-events-none">
-                     <video 
-                        src={bgVideo} 
-                        autoPlay loop muted playsInline 
-                        className="w-full h-full object-cover fixed top-0 left-0 brightness-[1.0] saturate-[1.0]" 
-                     />
-                     <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/70" />
-                  </div>
+                   {/* Exhibition Background Video - Clean and Clear */}
+                   <div className="absolute inset-0 z-0 pointer-events-none">
+                      <video 
+                         src={bgVideo} 
+                         autoPlay loop muted playsInline 
+                         className="w-full h-full object-cover fixed top-0 left-0 brightness-110 saturate-[1.1]" 
+                      />
+                   </div>
 
                   {/* IMMERSIVE CONTROLS */}
                   <button 
@@ -298,7 +297,7 @@ const MuseumWall: React.FC<MuseumWallProps> = ({ onSelectImg }) => {
                               {[...row.posters, ...row.posters, ...row.posters].map((img, idx) => (
                                  <div
                                     key={`${row.id}-${idx}`}
-                                    className="museum-poster flex-shrink-0 bg-black overflow-hidden rounded-sm shadow-2xl"
+                                    className="museum-poster flex-shrink-0 bg-transparent overflow-hidden"
                                     style={{ width: row.width, height: row.height }}
                                     onClick={() => onSelectImg({ img, year: '2021', title: 'Diplomatic Archive' })}
                                  >
