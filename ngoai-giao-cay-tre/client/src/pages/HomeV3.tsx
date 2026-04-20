@@ -43,6 +43,8 @@ import img2026 from "@root/2026.jpg";
 import sectionBg from "@root/assets/poster_dai_hoi_dang_13_square.png";
 // @ts-ignore
 import logoBualiem from "@root/logo-bualiem.jpg";
+// @ts-ignore
+import trongdong from "@root/trongdong.mp4";
 interface SectionProps {
    children: React.ReactNode;
    className?: string;
@@ -236,7 +238,13 @@ export default function Home() {
             </div>
          </Section>
 
-         <Section id="Triển lãm" className="bg-[#080404] !p-0 overflow-hidden flex flex-col justify-center">
+         <Section id="Triển lãm" className="relative !p-0 overflow-hidden flex flex-col justify-center">
+            <div className="absolute inset-0 z-[1] pointer-events-none">
+               <video autoPlay loop muted playsInline className="w-full h-full object-cover brightness-[0.25] scale-110">
+                  <source src={trongdong} type="video/mp4" />
+               </video>
+               <div className="absolute inset-0 bg-gradient-to-b from-[#080404] via-transparent to-[#080404]" />
+            </div>
             <MuseumWall onSelectImg={setSelectedImg} />
          </Section>
 
@@ -268,10 +276,10 @@ export default function Home() {
          )}
 
          {selectedImg && (
-            <div className="fixed inset-0 z-[200] bg-black/40 backdrop-blur-2xl flex items-center justify-center p-6 lg:p-24 overflow-hidden" onClick={() => setSelectedImg(null)}>
+            <div className="fixed inset-0 z-[200] bg-black/60 backdrop-blur-3xl flex items-center justify-center p-6 lg:p-24 overflow-hidden" onClick={() => setSelectedImg(null)}>
                <div className="absolute inset-0 z-0">
-                  <video autoPlay loop muted playsInline className="w-full h-full object-cover brightness-50 contrast-125">
-                     <source src={codangcovn} type="video/mp4" />
+                  <video autoPlay loop muted playsInline className="w-full h-full object-cover brightness-[0.15] contrast-125 blur-sm">
+                     <source src={trongdong} type="video/mp4" />
                   </video>
                </div>
                <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="relative h-full w-full flex items-center justify-center z-10" onClick={(e) => e.stopPropagation()}>
