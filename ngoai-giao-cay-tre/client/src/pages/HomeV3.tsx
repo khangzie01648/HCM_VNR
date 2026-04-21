@@ -56,6 +56,10 @@ import thanhlapDang from "@root/THÀNH LẬP ĐẢNG.jpg";
 import codang from "@root/codang.mp4";
 // @ts-ignore
 import td7Bg from "@root/assets/TD7.jpg";
+// @ts-ignore
+import BacTrongDaiHoi14 from "@root/ảnh bác Trọng.png";
+// @ts-ignore
+import ngoaiGiaoBanner from "@root/ngoaigiao.png";
 
 interface SectionProps {
    children: React.ReactNode;
@@ -95,6 +99,8 @@ export default function Home() {
       <main className="bg-[#080404] text-white w-full h-screen overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth relative no-scrollbar">
 
          <style>{`
+            @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+
             .forced-black-ink * { color: #1c0a0a !important; }
             .no-scrollbar::-webkit-scrollbar { display: none; }
             .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -106,6 +112,9 @@ export default function Home() {
             .page-back { transform: rotateY(180deg); z-index: 1; }
             .gutter-shadow { background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 45%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.1) 55%, rgba(0,0,0,0) 100%); }
             .stack-edge-right { background: linear-gradient(to right, #ddd, #fff 10%, #eee 20%, #fff 30%, #eee 40%, #fff 50%, #eee 60%, #fff 70%, #eee 80%, #fff 90%, #ddd); }
+
+            .font-playfair { font-family: 'Playfair Display', serif; }
+            .font-outfit { font-family: 'Outfit', sans-serif; }
          `}</style>
 
          <div className="fixed inset-0 z-0 pointer-events-none">
@@ -117,7 +126,7 @@ export default function Home() {
 
          <nav className="fixed top-0 left-0 w-full z-50 px-12 py-10 flex justify-end items-center bg-gradient-to-b from-black/80 to-transparent">
             <div className="hidden lg:flex items-center gap-12 text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">
-               {['Khởi đầu', 'Hành trình', 'Giá trị', 'Phòng chiếu', 'Nghiên cứu', 'Di sản', 'Sự kiện', 'Triển lãm', 'Tour'].map(item => (activeSection === item ? <span key={item} className="text-[#D4AF37] font-black">{item}</span> : <a key={item} href={`#${item}`} className="hover:text-[#D4AF37] transition-all">{item}</a>))}
+                {['Khởi đầu', 'Hành trình', 'Giá trị', 'Phòng chiếu', 'Nghiên cứu', 'Di sản', 'Sự kiện', 'Triển lãm', 'Đại hội XIV', 'Tầm nhìn', 'Tour'].map(item => (activeSection === item ? <span key={item} className="text-[#D4AF37] font-black">{item}</span> : <a key={item} href={`#${item}`} className="hover:text-[#D4AF37] transition-all">{item}</a>))}
                <div className="flex gap-6 items-center border-l border-white/10 pl-12">
                   <Search size={18} className="text-white/40 hover:text-white cursor-pointer" />
                   <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center cursor-pointer hover:bg-white/5">
@@ -198,7 +207,7 @@ export default function Home() {
                               <span className="text-[#D4AF37] font-black text-[12px] uppercase tracking-[1.25em] drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]">Mốc son 1930</span>
                            </div>
 
-                           <h3 style={{ fontFamily: "'Times New Roman', Times, serif" }} className="relative group/title">
+                           <h3 className="relative group/title font-playfair">
                               <span className="block text-white text-7xl lg:text-[10rem] font-black uppercase leading-[0.75] tracking-tighter drop-shadow-[0_20px_50px_rgba(0,0,0,1)]">
                                  HÀNH
                               </span>
@@ -239,6 +248,7 @@ export default function Home() {
                               <img
                                  src={thanhlapDang}
                                  className="w-full h-full object-cover filter brightness-110 saturate-[0.7] group-hover/portal:saturate-100 group-hover/portal:scale-105 transition-all duration-[8s]"
+                                 alt="Thành lập Đảng"
                               />
                               <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-transparent to-red-900/20" />
 
@@ -278,27 +288,58 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-12 lg:px-24 grid grid-cols-12 gap-16 lg:gap-24 items-center w-full relative z-10 text-left">
                <div className="col-span-12 lg:col-span-5 space-y-12">
                   <motion.div initial={{ opacity: 0, x: -60 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
-                     <h3 style={{ fontFamily: "'Times New Roman', Times, serif" }} className="text-5xl lg:text-7xl font-black uppercase tracking-normal text-white leading-[0.85] drop-shadow-2xl">
-                        GIÁ TRỊ <br /> TƯ TƯỞNG
+                     <h3 className="text-4xl lg:text-6xl font-black uppercase tracking-tighter text-white leading-[0.85] drop-shadow-2xl font-playfair">
+                        GIÁ TRỊ <br /> 
+                        <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#D4AF37] via-[#f7e09a] to-[#B8860B]">TƯ TƯỞNG</span>
                      </h3>
-                     <div className="w-40 h-[2px] bg-[#D4AF37] mt-8 mb-12 shadow-[0_0_15px_rgba(212,175,55,0.4)]"></div>
-                     <div className="flex items-stretch gap-6 pl-1">
+                     
+                     <div className="flex items-stretch gap-6 pl-1 mt-12 mb-12">
                         <div className="w-[4px] bg-red-700/80 rounded-full shadow-[0_0_15px_rgba(185,28,28,0.6)]"></div>
-                        <p className="text-white/40 text-[12px] font-mono tracking-[0.25em] italic leading-relaxed py-1 uppercase">
+                        <p className="text-white/60 text-[12px] font-mono tracking-[0.25em] italic leading-relaxed py-1 uppercase font-outfit">
                            “Gốc vững, thân chắc, <br /> cành uyển chuyển”
                         </p>
                      </div>
                   </motion.div>
                   <div className="space-y-12">
-                     <div className="relative w-full max-w-[460px] aspect-video rounded-[45px] overflow-hidden border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)]">
+                     <div className="relative w-full max-w-[460px] aspect-video rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)]">
                         <img src={hcmValueImage} alt="Heritage Legacy" className="w-full h-full object-cover brightness-110" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                      </div>
-                     <a href="https://online.anyflip.com/tvcfs/zuho/mobile/index.html#google_vignette" target="_blank" rel="noopener noreferrer" className="inline-block">
-                        <button className="px-14 py-5 bg-[#D4AF37] text-black text-[11px] font-black uppercase tracking-[0.4em] rounded-full hover:bg-white transition-all shadow-3xl text-left cursor-pointer">
-                           HỆ GIÁ TRỊ TƯ TƯỞNG
-                        </button>
-                     </a>
+                     
+                     <div className="flex justify-start">
+                        <motion.div
+                           layout
+                           onClick={() => window.open('https://online.anyflip.com/tvcfs/zuho/mobile/index.html#google_vignette', '_blank')}
+                           className="group relative flex items-center cursor-pointer"
+                        >
+                           {/* Central Icon Hub */}
+                           <motion.div 
+                              layout
+                              className="relative z-20 w-16 h-16 bg-gradient-to-br from-[#D4AF37] via-[#f7e09a] to-[#B8860B] rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(212,175,55,0.4)] group-hover:shadow-[0_0_60px_rgba(212,175,55,0.6)] transition-all duration-500"
+                           >
+                              <Maximize2 size={22} className="text-black group-hover:scale-110 transition-transform" />
+                              
+                              <motion.div 
+                                 animate={{ rotate: 360 }}
+                                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                                 className="absolute inset-[-6px] border border-[#D4AF37]/40 rounded-full border-dashed"
+                              />
+                           </motion.div>
+
+                           {/* Morphing Label */}
+                           <motion.div 
+                              layout
+                              className="absolute left-8 h-12 pr-12 pl-8 bg-black/90 backdrop-blur-3xl border border-[#D4AF37]/20 rounded-r-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:left-full group-hover:translate-x-[-10px] transition-all duration-500 pointer-events-none"
+                           >
+                              <div className="flex flex-col items-start whitespace-nowrap overflow-hidden">
+                                 <span className="text-[11px] font-black text-[#D4AF37] uppercase tracking-[0.4em] font-outfit">HỆ GIÁ TRỊ TƯ TƯỞNG</span>
+                                 <span className="text-[8px] text-white/40 uppercase tracking-[0.2em] font-bold mt-[2px] font-outfit">TÀI LIỆU NGHIÊN CỨU CHI TIẾT</span>
+                              </div>
+                           </motion.div>
+
+                           <div className="absolute inset-0 bg-[#D4AF37]/10 blur-3xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </motion.div>
+                     </div>
                   </div>
                </div>
                <div className="col-span-12 lg:col-span-7 flex justify-center items-center relative h-[700px] lg:h-[800px]">
@@ -315,28 +356,28 @@ export default function Home() {
          <Section id="Phòng chiếu" className="bg-[#050303] overflow-hidden flex flex-col items-center justify-center py-20 relative">
             {/* Historical Image Background */}
             <div className="absolute inset-0 z-0">
-               <img src={hcmValueImage} className="w-full h-full object-cover opacity-80 filter brightness-[0.5] contrast-125" />
+               <img src={hcmValueImage} className="w-full h-full object-cover opacity-80 filter brightness-[0.5] contrast-125" alt="Bakground" />
                <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-60" />
             </div>
-            
+
             {/* Ambient Background Light from Screen */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(185,28,28,0.08)_0%,transparent_70%)] pointer-events-none" />
-            
+
             <div className="w-full max-w-6xl mx-auto px-12 relative z-10 text-center">
                <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-                  <h3 style={{ fontFamily: "'Times New Roman', Times, serif" }} className="text-white text-4xl lg:text-6xl font-black uppercase mb-4 tracking-tighter opacity-90">PHÒNG CHIẾU PHIM TƯ LIỆU</h3>
+                  <h3 className="text-white text-4xl lg:text-6xl font-black uppercase mb-4 tracking-tighter opacity-90 font-playfair">PHÒNG CHIẾU PHIM TƯ LIỆU</h3>
                   <p className="text-[#D4AF37] font-serif italic text-lg opacity-60 mb-16 tracking-widest uppercase">Lịch sử hào hùng qua từng thước phim vàng</p>
                </motion.div>
 
-               <motion.div 
-                  initial={{ opacity: 0, scale: 0.95, filter: 'brightness(0)' }} 
-                  whileInView={{ opacity: 1, scale: 1, filter: 'brightness(1)' }} 
+               <motion.div
+                  initial={{ opacity: 0, scale: 0.95, filter: 'brightness(0)' }}
+                  whileInView={{ opacity: 1, scale: 1, filter: 'brightness(1)' }}
                   transition={{ duration: 1.5 }}
                   className="relative group/screen"
                >
                   {/* The Screen Frame */}
                   <div className="relative aspect-video rounded-sm overflow-hidden shadow-[0_0_100px_rgba(185,28,28,0.2)] border-4 border-white/5 border-b-white/10 ring-1 ring-white/10">
-                     <iframe 
+                     <iframe
                         className="w-full h-full"
                         src="https://www.youtube.com/embed/QA5Ipxpl3lY?modestbranding=1&rel=0&iv_load_policy=3&color=white"
                         title="Communist Party History"
@@ -344,11 +385,11 @@ export default function Home() {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                      ></iframe>
-                     
+
                      {/* Cinematic Vignette Overlay (over screen when not playing if possible, or just edge) */}
                      <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_100px_rgba(0,0,0,0.8)] opacity-60" />
                   </div>
-                  
+
                   {/* Decorative Stage Elements */}
                   <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-4/5 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent blur-[2px]" />
                   <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-3/5 h-[1px] bg-gradient-to-r from-transparent via-red-900/20 to-transparent blur-[4px]" />
@@ -365,8 +406,53 @@ export default function Home() {
             <div className="relative w-full h-full max-w-[1920px] mx-auto z-40 flex flex-col justify-center text-left">
                <div className="px-12 lg:px-44 w-full lg:w-3/5">
                   <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1.2 }}>
-                     <h2 className="text-white text-4xl lg:text-5xl font-[1000] uppercase tracking-normal leading-tight mb-4 text-left">TỔNG BÍ THƯ <br /><span className="text-[#D4AF37]">NGUYỄN PHÚ TRỌNG</span></h2>
-                     <button onClick={() => setShowVideo("4necLS4YHk4")} className="flex items-center gap-6 p-2 bg-red-800 hover:bg-red-700 border border-white/10 rounded-full text-white transition-all shadow-4xl group pr-10 scale-90"><div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-red-800 group-hover:scale-110 transition-transform"><ChevronRight size={20} strokeWidth={3} /></div><span className="text-[9px] font-black uppercase tracking-[0.4em]">XEM PHIM TƯ LIỆU</span></button>
+                     <h2 className="text-white text-3xl lg:text-5xl font-black uppercase leading-[1.1] tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)] font-playfair text-left">
+                        TỔNG BÍ THƯ <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#D4AF37] via-[#f7e09a] to-[#B8860B] italic">NGUYỄN PHÚ TRỌNG</span>
+                     </h2>
+
+                     {/* Creative High-Fidelity Button - Left Aligned Expansion */}
+                     <div className="flex justify-start mt-6">
+                        <motion.div
+                           layout
+                           onClick={() => setShowVideo("4necLS4YHk4")}
+                           className="group relative flex items-center cursor-pointer"
+                        >
+                           {/* Central Play Hub - Left Pinned */}
+                           <motion.div 
+                              layout
+                              className="relative z-20 w-16 h-16 bg-gradient-to-br from-[#D4AF37] via-[#f7e09a] to-[#B8860B] rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(212,175,55,0.4)] group-hover:shadow-[0_0_60px_rgba(212,175,55,0.6)] transition-all duration-500"
+                           >
+                              <Play size={22} className="text-black fill-black ml-1 group-hover:scale-110 transition-transform" />
+                              
+                              {/* Interactive Rings */}
+                              <motion.div 
+                                 animate={{ rotate: 360 }}
+                                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                                 className="absolute inset-[-6px] border border-[#D4AF37]/40 rounded-full border-dashed"
+                              />
+                              <motion.div 
+                                 animate={{ rotate: -360 }}
+                                 transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                                 className="absolute inset-[-12px] border border-[#D4AF37]/20 rounded-full"
+                              />
+                           </motion.div>
+
+                           {/* Morphing Label - Slide Reveal to the RIGHT */}
+                           <motion.div 
+                              layout
+                              className="absolute left-8 h-12 pr-12 pl-8 bg-black/90 backdrop-blur-3xl border border-[#D4AF37]/20 rounded-r-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:left-full group-hover:translate-x-[-10px] transition-all duration-500 pointer-events-none"
+                           >
+                              <div className="flex flex-col items-start whitespace-nowrap overflow-hidden">
+                                 <span className="text-[11px] font-black text-[#D4AF37] uppercase tracking-[0.4em] font-outfit">XEM PHIM TƯ LIỆU</span>
+                                 <span className="text-[8px] text-white/40 uppercase tracking-[0.2em] font-bold mt-[2px] font-outfit">DI SẢN TỔNG BÍ THƯ</span>
+                              </div>
+                           </motion.div>
+
+                           {/* Aura Glow */}
+                           <div className="absolute inset-0 bg-[#D4AF37]/10 blur-3xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </motion.div>
+                     </div>
                   </motion.div>
                </div>
             </div>
@@ -374,7 +460,7 @@ export default function Home() {
 
          <Section id="Di sản" className="overflow-hidden relative" style={{ background: '#0a0505' }}>
             <div className="absolute inset-0 z-0">
-               <img src={td7Bg} className="w-full h-full object-cover opacity-50 brightness-[0.4] contrast-125" />
+               <img src={td7Bg} className="w-full h-full object-cover opacity-50 brightness-[0.4] contrast-125" alt="Background" />
                <div className="absolute inset-0 bg-gradient-to-b from-[#080404] via-transparent to-[#080404]" />
                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(185,28,28,0.1),transparent_70%)]" />
             </div>
@@ -398,7 +484,7 @@ export default function Home() {
 
             <div className="w-full max-w-7xl mx-auto px-12 lg:px-24 relative z-10 py-24">
                <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }} className="mb-24 text-center">
-                  <h3 style={{ fontFamily: "'Times New Roman', Times, serif" }} className="text-white text-5xl lg:text-7xl font-black uppercase mb-6 tracking-tight">SỰ KIỆN ĐỐI NGOẠI NỔI BẬT</h3>
+                  <h3 className="text-white text-5xl lg:text-7xl font-black uppercase mb-6 tracking-tight font-playfair">SỰ KIỆN ĐỐI NGOẠI NỔI BẬT</h3>
                   <div className="w-48 h-[2px] bg-red-700 mx-auto"></div>
                </motion.div>
 
@@ -422,11 +508,11 @@ export default function Home() {
                         style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
                      >
                         <div className="absolute inset-0 flex items-center justify-center p-8 bg-black/40">
-                           <img src={item.img} className="w-full h-full object-contain filter blur-[20px] opacity-20 group-hover:blur-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-1000" />
+                           <img src={item.img} className="w-full h-full object-contain filter blur-[20px] opacity-20 group-hover:blur-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-1000" alt={item.title} />
                         </div>
                         <div className="absolute inset-0 flex items-center justify-center z-20 group-hover:opacity-0 transition-opacity duration-700">
                            <div className="relative w-36 h-36 border-4 border-red-700 rounded-full p-4 rotate-[-15deg] mix-blend-screen opacity-90 shadow-[0_0_30px_rgba(185,28,28,0.5)]">
-                              <img src={logoBualiem} className="w-full h-full object-contain filter contrast-150 brightness-110" style={{ mixBlendMode: 'screen' }} />
+                              <img src={logoBualiem} className="w-full h-full object-contain filter contrast-150 brightness-110" style={{ mixBlendMode: 'screen' }} alt="Logo" />
                            </div>
                         </div>
                         <div className="absolute top-10 right-10 bg-[#D4AF37] text-black px-8 py-2 rounded-full font-black text-2xl">{item.year}</div>
@@ -446,6 +532,129 @@ export default function Home() {
             <MuseumWall onSelectImg={setSelectedImg} />
          </Section>
 
+         <Section id="Đại hội XIV" className="!p-0 bg-[#080404] overflow-hidden">
+            <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+               <motion.img 
+                  initial={{ opacity: 0, scale: 1.05 }} 
+                  whileInView={{ opacity: 1, scale: 1 }} 
+                  transition={{ duration: 2.5 }} 
+                  src={BacTrongDaiHoi14} 
+                  className="w-full h-full object-cover object-center filter brightness-[1.1] contrast-[1.1]" 
+                  alt="Tổng Bí thư"
+               />
+               {/* Gradient mask on the right */}
+               <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-[#080404] via-[#080404]/60 to-transparent z-30" />
+            </div>
+            <div className="relative w-full h-full max-w-[1920px] mx-auto z-40 flex flex-col justify-center items-end text-right">
+               <div className="px-12 lg:px-44 w-full lg:w-3/5 flex flex-col items-end">
+                  <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1.2 }}>
+                     <h2 className="relative group/title cursor-default text-right font-playfair">
+                        <span className="block text-white text-3xl lg:text-5xl font-black uppercase leading-[1.1] tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                           ĐẠI HỘI ĐẢNG <br />
+                        </span>
+                        <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-br from-[#D4AF37] via-[#FFF5D1] to-[#B8860B] text-2xl lg:text-4xl font-black uppercase italic leading-tight tracking-tight drop-shadow-[0_5px_15px_rgba(184,134,11,0.4)]">
+                           LẦN THỨ XIV
+                        </span>
+                        {/* Decorative underline removed per request */}
+                     </h2>
+
+                     <div className="max-w-xl flex flex-col items-end mt-4">
+                        <div className="relative group/quote mb-4">
+                           <div className="absolute -left-6 -top-6 opacity-20">
+                              <Quote size={40} className="text-[#D4AF37]" />
+                           </div>
+                           <p className="text-white text-lg lg:text-2xl font-outfit font-black leading-[1.5] text-right relative z-10 drop-shadow-xl" style={{ textRendering: 'optimizeLegibility' }}>
+                               "Đại hội XIV là <span className="text-[#D4AF37]">dấu mốc quan trọng</span> trên con đường phát triển của <br />
+                               Đất nước và Dân tộc ta, có ý nghĩa định hướng tương lai, <br />
+                               tiếp tục đẩy mạnh toàn diện, đồng bộ <span className="text-[#D4AF37] text-xl lg:text-[2rem] underline decoration-1 underline-offset-8">công cuộc đổi mới.</span>"
+                           </p>
+                        </div>
+                        
+                        {/* Author block removed per request */}
+
+                        {/* Creative High-Fidelity Button - Balanced Spacing */}
+                        <div className="flex justify-end mt-2">
+                           <motion.div
+                              layout
+                              onClick={() => setShowVideo("rW3WZ0EQSSk")}
+                              className="group relative flex items-center cursor-pointer"
+                           >
+                              {/* Central Play Hub - Focused Size */}
+                              <motion.div 
+                                 layout
+                                 className="relative z-20 w-16 h-16 bg-gradient-to-br from-[#D4AF37] via-[#f7e09a] to-[#B8860B] rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(212,175,55,0.4)] group-hover:shadow-[0_0_60px_rgba(212,175,55,0.6)] transition-all duration-500"
+                              >
+                                 <Play size={22} className="text-black fill-black ml-1 group-hover:scale-110 transition-transform" />
+                                 
+                                 {/* Interactive Rings */}
+                                 <motion.div 
+                                    animate={{ rotate: 360 }}
+                                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                                    className="absolute inset-[-6px] border border-[#D4AF37]/40 rounded-full border-dashed"
+                                 />
+                                 <motion.div 
+                                    animate={{ rotate: -360 }}
+                                    transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                                    className="absolute inset-[-12px] border border-[#D4AF37]/20 rounded-full"
+                                 />
+                              </motion.div>
+
+                              {/* Morphing Label - Slide Reveal */}
+                              <motion.div 
+                                 layout
+                                 className="absolute right-8 h-12 pl-12 pr-8 bg-black/90 backdrop-blur-3xl border border-[#D4AF37]/20 rounded-l-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:right-full group-hover:translate-x-10 transition-all duration-500 pointer-events-none"
+                              >
+                                 <div className="flex flex-col items-start whitespace-nowrap overflow-hidden">
+                                    <span className="text-[11px] font-black text-[#D4AF37] uppercase tracking-[0.4em] font-outfit">XEM PHIM TƯ LIỆU</span>
+                                    <span className="text-[8px] text-white/40 uppercase tracking-[0.2em] font-bold mt-[2px] font-outfit">TẦM NHÌN ĐẠI HỘI XIV</span>
+                                 </div>
+                              </motion.div>
+
+                              {/* Aura Glow */}
+                              <div className="absolute inset-0 bg-[#D4AF37]/10 blur-3xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity" />
+                           </motion.div>
+                        </div>
+                     </div>
+                  </motion.div>
+               </div>
+            </div>
+         </Section>
+
+         <Section id="Tầm nhìn" className="!p-0 bg-[#080404] overflow-hidden">
+            <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+               <motion.img 
+                  initial={{ opacity: 0, scale: 1.1 }} 
+                  whileInView={{ opacity: 1, scale: 1 }} 
+                  transition={{ duration: 2 }} 
+                  src={ngoaiGiaoBanner} 
+                  className="w-full h-full object-cover filter brightness-[0.7] contrast-[1.1]" 
+                  alt="Banner"
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-[#080404] via-transparent to-black/40 z-10" />
+            </div>
+            <div className="relative z-20 w-full max-w-7xl mx-auto px-12 lg:px-24 h-full flex items-center justify-start">
+               <motion.div 
+                  initial={{ opacity: 0, x: -50 }} 
+                  whileInView={{ opacity: 1, x: 0 }} 
+                  transition={{ duration: 1.2, delay: 0.5 }}
+                  className="max-w-2xl -mt-[30vh]"
+               >
+                  <h2 className="relative group/title cursor-default font-playfair">
+                     <span className="block text-white text-4xl lg:text-6xl font-black uppercase leading-[1.1] tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                        Ngoại giao Việt Nam <br />
+                        <span className="text-2xl lg:text-4xl opacity-80">trong dòng chảy 80 năm</span>
+                     </span>
+                     <span className="block mt-4 text-transparent bg-clip-text bg-gradient-to-br from-[#D4AF37] via-[#FFF5D1] to-[#B8860B] text-3xl lg:text-5xl font-black uppercase italic leading-tight tracking-tight drop-shadow-[0_5px_15px_rgba(184,134,11,0.4)]">
+                        “ứng vạn biến” <br />
+                        <span className="text-xl lg:text-3xl not-italic ml-4 text-white/90">và kỳ vọng từ Đại hội XIV</span>
+                     </span>
+                     {/* Decorative underline */}
+                     <div className="w-24 h-[2px] bg-gradient-to-r from-[#D4AF37] to-transparent mt-6 shadow-[0_0_15px_rgba(212,175,55,0.6)]" />
+                  </h2>
+               </motion.div>
+            </div>
+         </Section>
+
          <Section id="Tour" className="relative group overflow-hidden bg-black">
             <div className="absolute inset-0 z-0 scale-110 group-hover:scale-100 transition-transform duration-[3s] ease-out">
                <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-40 brightness-50">
@@ -459,8 +668,8 @@ export default function Home() {
                         <Play size={24} fill="currentColor" />
                      </div>
                   </div>
-                  <h3 style={{ fontFamily: "'Times New Roman', Times, serif" }} className="text-white text-5xl lg:text-8xl font-black uppercase mb-6 tracking-tighter">VIRTUAL TOUR <span className="text-[#D4AF37]">360°</span></h3>
-                  <button onClick={() => window.location.href = '/virtual-tour'} className="px-20 py-8 bg-transparent border border-[#D4AF37]/50 rounded-full text-[#D4AF37] text-[12px] font-black uppercase tracking-[0.5em] hover:bg-[#D4AF37] hover:text-black transition-all">Bắt đầu hành trình</button>
+                  <h3 className="text-white text-5xl lg:text-8xl font-black uppercase mb-6 tracking-tighter font-playfair">VIRTUAL TOUR <span className="text-[#D4AF37]">360°</span></h3>
+                  <button onClick={() => window.location.href = '/virtual-tour'} className="px-20 py-8 bg-transparent border border-[#D4AF37]/50 rounded-full text-[#D4AF37] text-[12px] font-black uppercase tracking-[0.5em] hover:bg-[#D4AF37] hover:text-black transition-all font-outfit">Bắt đầu hành trình</button>
                </motion.div>
             </div>
          </Section>
@@ -504,13 +713,13 @@ export default function Home() {
                   <button
                      onClick={() => setShowVideo(null)}
                      className="absolute top-6 right-6 z-50 w-12 h-12 bg-black/50 hover:bg-red-600 rounded-full flex items-center justify-center text-white transition-all border border-white/10 backdrop-blur-md"
-                  >
+                   >
                      <X size={24} />
                   </button>
 
                   <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 px-6 py-2 bg-black/40 border border-white/5 rounded-full backdrop-blur-md">
                      <div className="w-2 h-2 bg-red-600 rounded-full animate-ping" />
-                     <span className="text-[10px] font-bold text-white/30 uppercase tracking-[0.4em]">Archival Cinematic Environment</span>
+                     <span className="text-[10px] font-bold text-white/30 uppercase tracking-[0.4em] font-outfit">Archival Cinematic Environment</span>
                   </div>
                </motion.div>
             </div>
